@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<head>
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementsByClassName("loginPassword");
+            if (passwordField[0].type === "password") 
+            {
+                passwordField[0].type = "text";
+            } 
+            else 
+            {
+                passwordField[0].type = "password";
+            }
+        }
+    </script>
+</head>
+
+</html>
+
+<body class="body_class">
+    <div class="login_box">
+        <h6 class="login_heading">Login Into Your Account</h6>
+        <form>
+            <input class="loginContact" placeholder="Contact Number" type="text" pattern="\d*" minlength="10" maxlength="10"required type="number"><br>
+            <input class="loginPassword" placeholder="Password" required type="password"><br>
+            <input type="checkbox" id="cb" onclick="togglePassword()">
+            <label for="cb">Show Password</label>
+            <button class="LoginButton" type="submit">LOG IN</button>
+        </form>
+    </div>
+    <div class="signup_shorcut_box">
+        <h6 class="signup_shortcut_text"><span class="line_text">New User ?</span></h6>
+        <a class="signup_shortcut_button" href="signup.html">SIGN UP</a>
+    </div>
+</body>

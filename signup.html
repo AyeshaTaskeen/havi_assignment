@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function signupfun()
+        {
+            event.preventDefault();
+            var firstname=document.getElementsByClassName("firstName")[0].value;
+            var lastname=document.getElementsByClassName("lastName")[0].value;
+            var email=document.getElementsByClassName("signupEmail")[0].value;
+            var contact=document.getElementsByClassName("signupContact")[0].value;
+            var dob=document.getElementsByClassName("signupDOB")[0].value;
+            var password=document.getElementsByClassName("signupPassword")[0].value; 
+            if(validate_username(firstname,document.getElementsByClassName("firstName")[0]))
+            {
+                if(validate_username(lastname,document.getElementsByClassName("lastName")[0]))
+                {
+                    if(validate_email())
+                    {
+                        if(validate_password())
+                        {
+                            let newUserDetails = {
+                            contact_number: contact,
+                            first_name: firstname,
+                            last_name: lastname,
+                            DOB: dob,
+                            email_id: email,
+                            password: password
+                        }
+                        fetch('https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user',
+                        {
+                            method: 'POST',
+                            body: JSON.stringify(newUserDetails)
+                        }).then(response => {
+                            alert("User Registered Successfully!!!")
+                            window.location.href = "index.html";
+                        })
+                            return true;
+                        }
+                    }  
+                }  
+            }
+        }
+        function validate_email()
+        {
+            var email=document.getElementsByClassName("signupEmail")[0].value;
+            var at_position=email.indexOf("@");
+            var dot_position=email.lastIndexOf(".");
+            if (at_position<1 || dot_position<at_position+2 || dot_position+2>=email.length)
+            {
+                alert("Not a valid e-mail address");
+                event.preventDefault();
+                document.getElementsByClassName("signupEmail")[0].focus();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        function validate_password()
+        {
+            var password=document.getElementsByClassName("signupPassword")[0].value; 
+            var confirm_password=document.getElementsByClassName("signupconfirmPassword")[0].value;
+            if(confirm_password!=password)
+            {
+                alert("not matching , please enter right passowrd")
+                event.preventDefault();
+                document.getElementsByClassName("signupPassword")[0].focus();
+                return false;
+            } 
+            else
+            {
+                return true;
+            }
+        }
+        function validate_username(name,field)
+        {
+            for(i=0;i<name.length;i++)
+            {
+                if(!((name.charAt(i)>='a'&&name.charAt(i)<='z')||(name.charAt(i)>='A'&&name.charAt(i)<='Z')))
+                {
+                    alert("enter alphabets only in name field");
+                    field.focus();
+                    return false;
+                    break;
+                }
+            }
+            return true;
+        }
+    </script>
+</head>
+<body class="body_class">
+    <div class="signup_details_box">
+        <h5 class="signup_heading">Complete Account Signup</h5><br>
+        <form autocomplete="off" onsubmit="signupfun()">
+            <input class="firstName" placeholder="Firstname" required type="text"><br>
+            <input class="lastName" placeholder="Lastname" required type="text"><br>
+            <input class="signupDOB" type="date" id="dob" required name="date_of_birth"><br>
+            <input class="signupEmail" type="text" placeholder="Email Address" required size="25"  /><br>
+            <input class="signupContact" type="text" pattern="\d*" minlength="10" maxlength="10" placeholder="Contact Number" required/><br>
+            <input class="signupPassword" placeholder="Password" required type="password"><br>
+            <input class="signupconfirmPassword" placeholder="Confirm Password" required type="password"><br>
+            <button class="signupButton" type="submit">SIGN UP</button>
+        </form>
+    </div>
+</body>
+
+</html>

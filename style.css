@@ -1,0 +1,283 @@
+.body_class{
+    background-color: whitesmoke;
+}
+
+/* Login Form */
+.login_box {
+    width: 550px;
+    margin: 45px auto 0px auto;
+    padding: 50px 0px 15px;
+    background: white;
+}
+.login_heading {
+    margin: 0% 22% ;
+    font-size: 25px ;
+    font-weight: bolder ;
+}
+.loginPassword {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.loginPassword:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.loginContact {
+    height: 35px;
+    margin: 40px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.loginContact:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.LoginButton {
+    background-color: #37A000 ;
+    color: white ;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    align-items: center;
+    height: 35px;
+    margin: 1% 22% 2%;
+    width: 300px;
+    border-radius: 0px ;
+    font-weight: bold ;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+     0px 2px 2px 0px rgba(0,0,0,0.14),
+     0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.LoginButton:hover{
+    background-color: #008329;
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),
+     0px 8px 10px 1px rgba(0,0,0,0.14), 
+     0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+input[type="checkbox"] {
+    margin: 0px 5px 10px 120px;
+    cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+    border: 1px solid black;
+    border: 1px solid ;
+    content: "\00a0";
+    display: inline-block;
+    font: 16px/1em sans-serif;
+    height: 15px;
+    margin: 0 .25em 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 16px;
+}
+input[type="checkbox"] {
+    visibility: hidden;
+  }
+input[type="checkbox"]:checked + label:before {
+    background:#37A000;
+    color:white;
+    content: "\2713";
+    text-align: center;
+}
+.signup_shorcut_box {
+    width: 550px ;
+    margin: -3px auto 50px auto;
+    padding: 35px 0px 15px;
+    background-color: #faf7f7 ;
+    border-top: 1px solid #e0e0e0;
+    border-radius: 0px ;
+    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 
+     0px 1px 1px 0px rgba(0,0,0,0.14),
+     0px 1px 3px 0px rgba(0,0,0,0.12);
+}
+
+.signup_shortcut_text {
+    width: 55%;
+    text-align: center;
+    PADDING: 0px 0px;
+    border-bottom: 1px solid #aeaeae;
+    line-height: 0.1em ;
+    margin: 0px 122px 20px 120px ;
+}
+.line_text {
+    color: grey;
+    font-family: sans-serif;
+    font-size: 16px;
+    background: #faf7f7;
+    padding: 0 10px;
+}
+.signup_shortcut_button {
+    border: 0;
+    cursor: pointer;
+    display: block;
+    font-family: sans-serif;
+    border-radius: 3px;
+    padding: 10px 49px 10px;
+    color: #37A000;
+    text-decoration: none;
+    background-color: white;
+    margin: 4% 35% 4%;
+    font-weight: bolder;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 
+    0px 2px 2px 0px rgba(0,0,0,0.14), 
+    0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+.signup_shortcut_button:hover{
+    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2),
+     0px 4px 5px 0px rgba(0,0,0,0.14),
+     0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+.signup_shortcut_button:focus{
+    border: none;
+    outline: none;
+}
+
+/* signup page */
+.signup_details_box {
+    width: 550px;
+    margin: 45px auto 0px auto;
+    padding: 50px 0px 15px;
+    background: white;
+}
+.signup_heading {
+    margin: 0% 22% ;
+    font-size: 25px ;
+    font-weight: bolder ;
+}
+.firstName {
+        height: 35px;
+        margin: 40px 122px 20px 120px;
+        width: 280px;
+        padding-left: 20px;
+        border-radius: 4px;
+        border: 1px solid #ccc7c7;
+}
+.firstName:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.lastName {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.lastName:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupDOB {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.signupDOD:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupEmail {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.signupEmail:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupContact {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.signupContact:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupPassword {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.signupPassword:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupconfirmPassword {
+    height: 35px;
+    margin: 0px 122px 20px 120px;
+    width: 280px;
+    padding-left: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc7c7;
+}
+.signupconfirmPassword:focus-within {
+    outline: none;
+    border-color: #37A000;
+    border: 2px solid #37A000;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px #37A000;
+}
+.signupButton:hover{
+    background-color: #008329;
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2),
+     0px 8px 10px 1px rgba(0,0,0,0.14), 
+     0px 3px 14px 2px rgba(0,0,0,0.12);
+}
+.signupButton {
+    background-color: #37A000;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    align-items: center;
+    height: 35px;
+    margin: 1% 22% 2%;
+    width: 280px;
+    border-radius: 0px;
+    font-weight: bold;
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+}
