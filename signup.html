@@ -66,7 +66,8 @@
             if(confirm_password!=password)
             {
                 alert("not matching , please enter right passowrd")
-                event.preventDefault();
+                document.getElementsByClassName("signupPassword")[0].value=""; 
+                document.getElementsByClassName("signupconfirmPassword")[0].value="";
                 document.getElementsByClassName("signupPassword")[0].focus();
                 return false;
             } 
