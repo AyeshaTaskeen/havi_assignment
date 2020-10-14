@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body onload="getUser()" class="body_class">
+    <div class="userPage_box">
+        <h5 class="userPage_heading"></h5><br>
+        <form autocomplete="off" onsubmit=inserToList(event)>
+            <input class="userPage_input" placeholder="Eg:Presidency" required type="text" autofocus><br>
+            <button class="userPage_insertButton" type="submit">INSERT</button>
+            <p class="userPage_list"></p>
+        </form>
+        <button class="userPage_insertButton" onclick="logOut()">LOG OUT</button>
+    </div>
+</body>
+
+</html>
