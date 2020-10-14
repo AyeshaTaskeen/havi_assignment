@@ -130,6 +130,10 @@ function togglePassword() {
 let list = []
 function getUser() {
     console.log(document.referrer)
+    if(document.referrer=="")
+    {
+        window.location.href="index.html"
+    }
     document.getElementsByClassName("userPage_heading")[0].innerHTML = "Welcome " + sessionStorage.getItem("username");
 }
 
