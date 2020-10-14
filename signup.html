@@ -20,23 +20,40 @@
                     {
                         if(validate_password())
                         {
-                            let newUserDetails = {
-                            contact_number: contact,
-                            first_name: firstname,
-                            last_name: lastname,
-                            DOB: dob,
-                            email_id: email,
-                            password: password
-                        }
-                        fetch('https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user',
-                        {
-                            method: 'POST',
-                            body: JSON.stringify(newUserDetails)
-                        }).then(response => {
-                            alert("User Registered Successfully!!!")
-                            window.location.href = "index.html";
-                        })
-                            return true;
+                            document.getElementsByClassName("signupButton")[0].style.display="none";
+                            fetch("https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user?contact_number="+contact)
+                            .then(response => response.json())
+                            .then(result => 
+                            {
+                                if(result.Count==0)
+                                {
+                                    let newUserDetails = 
+                                    {
+                                        contact_number: contact,
+                                        first_name: firstname,
+                                        last_name: lastname,
+                                        DOB: dob,
+                                        email_id: email,
+                                        password: password
+                                    }
+                                    fetch('https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user',
+                                    {
+                                        method: 'POST',
+                                        body: JSON.stringify(newUserDetails)
+                                    }).then(response => 
+                                    {
+                                        alert("User Registered Successfully!!!")
+                                        window.location.href = "index.html";
+                                    })
+                                    document.getElementsByClassName("signupButton")[0].style.display="block";
+                                }
+                                else
+                                {
+                                    alert("User already exists")
+                                    document.getElementsByClassName("signupButton")[0].style.display="none";
+                                    document.getElementsByClassName("signuperror")[0].style.display="block";
+                                }
+                            })
                         }
                     }  
                 }  
@@ -104,8 +121,12 @@
             <input class="signupPassword" placeholder="Password" required type="password"><br>
             <input class="signupconfirmPassword" placeholder="Confirm Password" required type="password"><br>
             <button class="signupButton" type="submit">SIGN UP</button>
+            <p class="signuperror">User already exists <a href="index.html">sign in</a></p>
         </form>
     </div>
+    <div class="signup_shorcut_box">
+        <h6 class="signup_shortcut_text"><span class="line_text">Old User ?</span></h6>
+        <a class="signup_shortcut_button" href="index.html">SIGN IN</a>
+    </div>
 </body>
-
 </html>

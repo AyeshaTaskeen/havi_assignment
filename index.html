@@ -6,7 +6,12 @@
     <title>LOGIN PAGE</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function togglePassword() {
+        function signin()
+        {
+            var password=document.getElementsByClassName("loginPassword")[0].value; 
+        }
+        function togglePassword() 
+        {
             var passwordField = document.getElementsByClassName("loginPassword");
             if (passwordField[0].type === "password") 
             {
