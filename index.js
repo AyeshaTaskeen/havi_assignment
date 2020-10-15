@@ -206,7 +206,7 @@ function getAllUsers() {
         .then(result => {
             if (result.Count > 0) {
                 result.Items.forEach((user) => {
-                    userList.push(user.first_name + user.last_name)
+                    userList.push(user.first_name +" "+ user.last_name)
                 })
                 for (var i = 0; i < userList.length; i++) {
                     AdminGrid = "<div class='grid-item'>" + userList[i] + "</div>";
