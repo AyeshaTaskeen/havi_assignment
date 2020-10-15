@@ -1,3 +1,7 @@
+
+//This Function is written to handle the signup
+//here we do a validation for all the inputs.
+//then we check in db whether the data is present or not if it is not present we insert the data
 function signupfun(event) {
     event.preventDefault();
     var firstname = document.getElementsByClassName("firstName")[0].value;
@@ -45,6 +49,8 @@ function signupfun(event) {
         }
     }
 }
+
+//This function is used to validate email
 function validate_email() {
     var email = document.getElementsByClassName("signupEmail")[0].value;
     var at_position = email.indexOf("@");
@@ -59,6 +65,8 @@ function validate_email() {
         return true;
     }
 }
+
+//This Function is used to validate password
 function validate_password() {
     var password = document.getElementsByClassName("signupPassword")[0].value;
     var confirm_password = document.getElementsByClassName("signupconfirmPassword")[0].value;
@@ -73,6 +81,8 @@ function validate_password() {
         return true;
     }
 }
+
+//This Function is used to validate name
 function validate_username(name, field) {
     for (i = 0; i < name.length; i++) {
         if (!((name.charAt(i) >= 'a' && name.charAt(i) <= 'z') || (name.charAt(i) >= 'A' && name.charAt(i) <= 'Z'))) {
@@ -85,12 +95,16 @@ function validate_username(name, field) {
     return true;
 }
 
+
+//This Function is hit to show the signup button again when number is different from the existing number in db
 function showSignUpButton() {
     document.getElementsByClassName("signupButton")[0].style.display = "block";
     document.getElementsByClassName("signuperror")[0].style.display = "none";
 }
 
 //loginForm
+
+//This Function handles signin process by sending number accross the api and getting back the user then comparing the password.
 function signin(event) {
     event.preventDefault()
     var number = document.getElementsByClassName("loginContact")[0].value;
@@ -116,6 +130,8 @@ function signin(event) {
             }
         })
 }
+
+//This is used to change the type of password field through check box
 function togglePassword() {
     var passwordField = document.getElementsByClassName("loginPassword");
     if (passwordField[0].type === "password") {
@@ -127,16 +143,19 @@ function togglePassword() {
 }
 
 //userPage
+
 let list = []
+
+//This Fucntion is used to see if we are getting the index.html as the previous page.so that we can restrict the user from directly accessing the page.
 function getUser() {
-    console.log(document.referrer)
-    if(document.referrer=="")
-    {
-        window.location.href="index.html"
+    if (document.referrer == "") {
+        window.location.href = "index.html"
     }
     document.getElementsByClassName("userPage_heading")[0].innerHTML = "Welcome " + sessionStorage.getItem("username");
 }
 
+
+//This Function is used to insert list data into db and then load the data and show inside userPage as a unordered list
 function inserToList(event) {
     event.preventDefault()
     var listItem = document.getElementsByClassName("userPage_input")[0].value;
@@ -170,7 +189,29 @@ function inserToList(event) {
 
 }
 
+
+//This Function is used to logout the user by redirecting him to login page and clearing the local session storage
 function logOut() {
     window.location.href = "index.html";
     localStorage.clear();
+}
+
+//Admin Grid
+let userList = []
+
+//This function is used to get all users from db and show them in a grid when admin watches it.
+function getAllUsers() {
+    fetch("https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/getallusers")
+        .then(response => response.json())
+        .then(result => {
+            if (result.Count > 0) {
+                result.Items.forEach((user) => {
+                    userList.push(user.first_name + user.last_name)
+                })
+                for (var i = 0; i < userList.length; i++) {
+                    AdminGrid = "<div class='grid-item'>" + userList[i] + "</div>";
+                    document.getElementsByClassName("grid-container")[0].innerHTML += AdminGrid;
+                }
+            }
+        })
 }
