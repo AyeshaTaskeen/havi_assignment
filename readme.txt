@@ -13,10 +13,10 @@ https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user?contact_number=
 2)This API is used to post data to dynamo db.
 https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/user
 
-4)This API is used to post the list and entered by user to populate.
+3)This API is used to post the list and entered by user to populate.
 https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/list
 
-6)This API is used to get all users from db to show in admin grid.
+4)This API is used to get all users from db to show in admin grid.
 https://zezm09x6u5.execute-api.ap-south-1.amazonaws.com/Dev/getallusers
 
 
